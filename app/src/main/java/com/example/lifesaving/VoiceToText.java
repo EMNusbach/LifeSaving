@@ -15,6 +15,9 @@ import java.util.Locale;
 
 public class VoiceToText extends AppCompatActivity {
 
+    public String getMessege(String messege){
+        return messege;
+    }
     private final int REQ_CODE = 100;
     TextView textView;
 
@@ -51,13 +54,7 @@ public class VoiceToText extends AppCompatActivity {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String text = result.get(0).toString();
-                    textView.setText(text);
-                    if (text.contains("זכר")) {
-                        textView.setText("מה הגיל שלו?");
-                    } else if (text.contains("נקבה")) {
-                        textView.setText("מה הגיל שלה?");
-                    }
+                    getMessege(result.get(0).toString());
                 }
                 break;
             }
