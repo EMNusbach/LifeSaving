@@ -1,5 +1,6 @@
 package com.example.lifesaving;
 
+import android.annotation.SuppressLint;
 import android.speech.tts.TextToSpeech;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ public class TextToVoice extends AppCompatActivity {
     private SeekBar mSeekBarSpeed;
     private Button mButtonSpeak;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class TextToVoice extends AppCompatActivity {
             }
         });
 
-        mEditText = findViewById(R.id.button_speak);
+        mEditText = findViewById(R.id.edit_text);
         mSeekBarPitch = findViewById(R.id.seek_bar_pitch);
         mSeekBarSpeed = findViewById(R.id.seek_bar_speed);
 
